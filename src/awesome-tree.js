@@ -3,7 +3,8 @@
 
 	//the default settings for awesome tree.
 	var settings = {
-		cursorAt: {left: 10, top: -40}
+		cursorAt: {left: 10, top: 10},
+		movingClass: "tree_moving"
 	};
 
 	var debug = function(obj) {
@@ -12,23 +13,31 @@
 		}
 	};
 
-	var handleDraggableStart = function(event, ui) {
+	var getOptions = function(el) {
+		return el.closest(".awesomeTree").data("options");
+	};
+
+	var handleDraggableStart = function(e, ui) {
 		debug("drag event start...");
+		$(e.target).addClass(getOptions($(e.target)).movingClass);
+		$("body").css("cursor", "default");
 	};
 
-	var handleDraggableStop = function(event, ui) {
+	var handleDraggableStop = function(e, ui) {
 		debug("drag event stop...");
+		$(e.target).removeClass(getOptions($(e.target)).movingClass);
+		$("body").css("cursor", "auto");
 	};
 
-	var handleDroppableDrop = function(event, ui) {
+	var handleDroppableDrop = function(e, ui) {
 		debug("drop event drop...");
 	};
 
-	var handleDroppableOver = function(event, ui) {
+	var handleDroppableOver = function(e, ui) {
 		debug("drop event over...");
 	};
 
-	var handleDrppableOut = function(event, ui) {
+	var handleDrppableOut = function(e, ui) {
 		debug("drop event out...");
 	};
 
@@ -42,10 +51,10 @@
 
 			//bind drag and drop event for the element
 			$("li", $this).draggable({
-				addClasses: false,
+				addClasses: true,
 				helper: "clone",
 				appendTo: "body",
-				opacity: 0.2,
+				opacity: 0.8,
 				delay: 10,
 				cursorAt: settings.cursorAt,
 				start: handleDraggableStart,

@@ -9,16 +9,44 @@
     </head>
 
     <body>
-        <div class="awesomeTree">
+        <div class="container">
             <p>You can redefine the tree's order by dragging it.</p>
-            <ul>
-                <li>Forder 1</li>
-                <li>Forder 2</li>
-                <li>Forder 3</li>
-                <li>Forder 4</li>
-            </ul>
+            <div class="awesomeTree">
+                <ul class="tree_ul">
+                    <li class="tree_li">
+                        <div class="tree_node">
+                            <a class="tree-toggler">▼</a>
+                            <span class="tree_label">node 1</span>
+                        </div>
+                        <ul class="tree_ul">
+                            <li class="tree_li">
+                                <div class="tree_node">
+                                    <span class="tree_label">child 1</span>
+                                </div>
+                            </li>
+                            <li class="tree_li">
+                                <div class="tree_node">
+                                    <span class="tree_label">child 2</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="tree_li">
+                        <div class="tree_node">
+                            <a class="tree-toggler">▼</a>
+                            <span class="tree_label">node 2</span>
+                        </div>
+                        <ul class="tree_ul">
+                            <li class="tree_li">
+                                <div class="tree_node">
+                                    <span class="tree_label">child 3</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-
 
 
         <script src="../lib/jquery-1.8.3.min.js" type="text/javascript"></script>
