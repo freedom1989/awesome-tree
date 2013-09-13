@@ -57,6 +57,7 @@ span.tree_label {
 
 .tree_moving {
      outline: dashed 1px #0000ff;
+     display: inline-block;
 }
 
 span.tree-dragging {
@@ -65,4 +66,15 @@ span.tree-dragging {
     opacity: 0.6;
     cursor: pointer;
     padding: 2px 8px;
+}
+
+span.tree-border {
+    display: inline-block;
+    left: -2px;
+    top: 0;
+    border: solid 2px #0000ff;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    margin: 0;
 }

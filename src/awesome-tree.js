@@ -25,20 +25,25 @@
 
 	var handleDraggableStop = function(e, ui) {
 		debug("drag event stop...");
-		$(e.target).removeClass(getOptions($(e.target)).movingClass);
+		$(e.target).unbind("mousemove").removeClass(getOptions($(e.target)).movingClass);
 		$("body").css("cursor", "auto");
+	};
+
+
+	var handleDroppableOver = function(e, ui) {
+		debug("drop event over...");
+		debug(e);
+		debug($(e.target).is("li"));
+		if($(e.target).is("li")) {
+			$(e.target).bind("mousemove", function(event) {
+				
+			});
+		}
 	};
 
 	var handleDroppableDrop = function(e, ui) {
 		debug("drop event drop...");
-	};
-
-	var handleDroppableOver = function(e, ui) {
-		debug("drop event over...");
-	};
-
-	var handleDrppableOut = function(e, ui) {
-		debug("drop event out...");
+		$(e.target).unbind("mousemove");
 	};
 
 	$.fn.awesomeTree = function(options) {
@@ -64,8 +69,7 @@
 				greedy: false,
 				tolerance: "pointer",
 				drop: handleDroppableDrop,
-				over: handleDroppableOver,
-				out: handleDrppableOut
+				over: handleDroppableOver
 			});
 
 			//bind option parmeters to context
