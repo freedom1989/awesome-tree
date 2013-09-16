@@ -3,7 +3,7 @@
 
 	//the default settings for awesome tree.
 	var settings = {
-		cursorAt: {left: 10, top: 10},
+		cursorAt: {left: 10, top: -40},
 		selectedClass: "tree_moving"
 	};
 
