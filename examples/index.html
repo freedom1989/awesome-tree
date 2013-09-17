@@ -6,45 +6,45 @@
         <meta name="author" content="">
         <title>Awesome Tree Example</title>
         <link href="../src/css/awesome-tree.css" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+            body {
+                font-family: 'Open Sans', sans-serif;
+                font: 1em/1.625 Georgia, serif;
+                color: #333;
+            }
+            .awesomeTree {
+                border: solid 1px #666;
+                padding: 1em;
+                width: 25%;
+                -moz-user-select: none; 
+                -khtml-user-select: none; 
+                -webkit-user-select: none; 
+                -o-user-select: none; 
+            }
+        </style>
     </head>
 
     <body>
         <div class="container">
             <p>You can redefine the tree's order by dragging it.</p>
             <div class="awesomeTree">
-                <ul class="tree_ul">
-                    <li class="tree_li">
-                        <div class="tree_node">
-                            <a class="tree-toggler">▼</a>
-                            <span class="tree_label">node 1</span>
-                        </div>
-                        <ul class="tree_ul">
-                            <li class="tree_li">
-                                <div class="tree_node">
-                                    <span class="tree_label">child 1</span>
-                                </div>
-                            </li>
-                            <li class="tree_li">
-                                <div class="tree_node">
-                                    <span class="tree_label">child 2</span>
-                                </div>
-                            </li>
+                <ul>
+                    <li>
+                        node 1
+                        <ul>    
+                            <li>child 1</li>
+                            <li>child 2</li>
                         </ul>
                     </li>
-                    <li class="tree_li">
-                        <div class="tree_node">
-                            <a class="tree-toggler">▼</a>
-                            <span class="tree_label">node 2</span>
-                        </div>
-                        <ul class="tree_ul">
-                            <li class="tree_li">
-                                <div class="tree_node">
-                                    <span class="tree_label">child 3</span>
-                                </div>
-                            </li>
+                    <li>
+                        node 2
+                        <ul>
+                            <li>child 3</li>
+                            <li>child 4</li>
                         </ul>
                     </li>
                 </ul>
+                <span class="node-dragging">DraggingEl</span>
             </div>
         </div>
 

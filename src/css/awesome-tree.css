@@ -1,80 +1,21 @@
-body {
-    font-family: 'Open Sans', sans-serif;
-    font: 1em/1.625 Georgia, serif;
-    color: #333;
+.awesomeTree ul li {
+   list-style: none outside;
 }
 
-#page ul {
-    list-style-position: outside;
-    margin-left: 1em;
+.awesomeTree li {
+    
 }
 
-li ul, li ol {
-    margin: 0 1.625em;
+.awesomeTree .node-selected {
+    outline: dashed 1px #0000ff;
+    display: inline-block;
 }
 
-.container {
-    float: left;
-    width: 25%;
-}
-
-.awesomeTree {
-    border: solid 1px #666;
-    padding: 1em;
-}
-
-ul.tree_ul {
-    list-style: none outside;
-    margin-bottom: 0;
-    padding: 0;
-}
-
-span.tree_label {
-    color: #1C4257;
-    vertical-align: middle;
-    margin-left: 0;
-}
-
-.tree-toggler {
-    left: -1.5em;
-    top: 30%;
-    font-size: 12px;
-    line-height: 12px;
-    font-family: arial;
-    border-bottom: none;
-    color: #333;
-}
-
-.tree_node {
-    width: 100%;
-    position: relative;
-}
-
-.tree_li {
-    clear: both;
-    list-style-type: none;
-}
-
-.tree_moving {
-     outline: dashed 1px #0000ff;
-     display: inline-block;
-}
-
-span.tree-dragging {
+.ui-draggable-helper {
     color: #fff;
     background: #000;
-    opacity: 0.6;
+    opacity: 0.1;
     cursor: pointer;
-    padding: 2px 8px;
-}
-
-span.tree-border {
-    display: inline-block;
-    left: -2px;
-    top: 0;
-    border: solid 2px #0000ff;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    margin: 0;
+    padding: 2px 4px;
+    list-style: none outside;
 }
