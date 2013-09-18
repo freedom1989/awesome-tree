@@ -57,35 +57,26 @@
 
 		if($(e.target).is("li")) {
 			$(e.target).bind("mousemove", function(mme) {
-				var target = $(mme.target),
-					x = mme.pageX - target.offset().left,
-					y = mme.pageY - target.offset().top,
-					threshhold = options.threshhold;
-
-				if(target.find("ul").length !== 0) {
-					threshhold = Math.min(options.threshhold * (target.find("ul").length + 1), target.width() * 0.75);
-				}
+				var target = $(mme.target);
 
 				if(target.hasClass(selectedClass) || target.parents("." + selectedClass).length !== 0) {
 					marker.detach();
 				}else {
+					debug(mme.pageY + ", " + target.offset().top + ", " + target.height());
 
-					// debug("x -- > " + x + ", threshhold -- > " + threshhold);
-					if(x > threshhold) {
-						debug("x > threshhold");
-						if (target.is("li") && target.children("ul").length !== 0) {
-							target.children("ul").append(marker);
-						} else if (target.is("li")) {
-							target.append(marker);
-						}
-					} else if(y < target.height() / 2) {
-						debug("y < height / 2");
-						marker.addClass(beforeClass);
-						target.before(marker);
+					
+					if(target.is("span")) {
+						
+						$(".node-focused").removeClass("node-focused");
+						target.parents(".tree_node").addClass("node-focused");
+					} else if(target.is($(".tree_node"))) {
+
+						$(".node-focused").removeClass("node-focused");
+						target.addClass("node-focused");
 					} else {
-						debug("x < threshhold || y > height / 2");
-						marker.addClass(afterClass);
-						target.after(marker);
+						if(target.is("li")) {
+							// debug(target);
+						}
 					}
 				}
 			});

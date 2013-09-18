@@ -11,11 +11,34 @@
     display: inline-block;
 }
 
+.awesomeTree .node-focused {
+    display: block;
+    left: -2px;
+    top: 0;
+    border: solid 2px #0000ff;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    margin: 0;
+}
+
+.awesomeTree .tree_node {
+    display: inline-block;
+}
+
 .ui-draggable-helper {
     color: #fff;
     background: #000;
-    opacity: 0.1;
+    opacity: 0.6;
     cursor: pointer;
     padding: 2px 4px;
     list-style: none outside;
+}
+
+.awesomeTree .tdd-after, .awesomeTree .tdd-before, .awesomeTree .tdd-append{
+    height:6px;
+    margin:0;
+    /* border:solid #E4426B 1px; */
+    background:#A753CC;
+    width:100px;
 }
